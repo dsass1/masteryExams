@@ -1,1 +1,1 @@
-# mastery-exams
+# masteryExams
