@@ -30,7 +30,7 @@
 .topics {
   width: 75%;
   overflow-x: auto;
-  padding-bottom: 600px;
+  padding: 0 0.5em 600px;
 }
 
 .topics .tutorialTitle {
@@ -90,7 +90,6 @@
 }
 
 .topicsFooter .resetButton {
-  padding-left: 10px;
   font-size: .66em;
   cursor: pointer;
   opacity: .7;
@@ -100,28 +99,10 @@
   opacity: 1;
 }
 
-.topicsFooter .printButton {
-  padding-left: 10px;
-  font-size: .66em;
-  cursor: pointer;
-  opacity: .7;
-}
-
-.topicsFooter .printButton:hover {
-  opacity: 1;
-}
-
 .topicsList .topic {
-  line-height: 40px;
-  font-size: 15px;
-  padding-left: 10px;
-  cursor: pointer;
-
-  background-repeat: no-repeat;
-  background-size: 2px 80px;
-  background-position: left 100%;
-  background-image: url(images/topicProgress.png);
-  border-bottom: 1px solid #f8f8f8;
+  line-height: 2.5;
+	color: var(--bs-body-color, inherit);
+	background-color: var(--bs-body-bg, #f8f8f8);
 
   -webkit-transition-property: background-position;
   transition-property: background-position;
@@ -129,12 +110,23 @@
   transition-duration: 0.25s;
 }
 
-.topicsList .topic:hover {
-  background-color: #fcfcfc;
+.topicsList .topic.current {
+  font-weight: bold;
 }
 
-.topicsList .topic.current {
-  background-color: #f8f8f8;
+.topicsList .nav-link {
+  padding-left: 0;
+}
+
+.tutorial-is-bs3 .topicsList .topic,
+.tutorial-is-bs3 .topicsList .nav-link,
+.tutorial-is-bs3 .topicsList .resetButton {
+  padding-left: 1em;
+  margin-left: -1em;
+}
+
+.tutorial-is-bs3 .topicsList {
+  padding-left: 1em;
 }
 
 .section.level3 {
@@ -243,33 +235,6 @@
 
   .paneCloser {
     display: inline-block;
-  }
-}
-
-@media print {
-  .topicsContainer,
-  .topicActions,
-  .exerciseActions .skip {
-    display: none;
-  }
-  .topics .tutorialTitle,
-  .topics .section.level2,
-  .topics .section.level3:not(.hide) {
-    display: block;
-  }
-  .topics {
-    width: 100%;
-  }
-  .tutorial-exercise, .tutorial-question {
-    page-break-inside: avoid;
-  }
-  .section.level3.done h3 {
-    padding-left: 0;
-    background-image: none;
-  }
-  .topics .showSkip .exerciseActions::before {
-    content: "Topic not yet completed...";
-    font-style: italic;
   }
 }
 
