@@ -1,0 +1,62 @@
+---
+title: "RC 01: Preface & Chapter 1"
+tutorial:
+  id: "RC_01"
+  version: 0.1
+  
+output:
+  masteryExams::tutorial:
+    progressive: false
+    allow_skip: true
+runtime: shiny_prerendered
+description: >
+  Learn the basics of Quarto.
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(ISDStutorials)
+library(masteryExams)
+library(gradethis)
+
+gradethis_setup()
+knitr::opts_chunk$set(echo = FALSE)
+
+options(tutorial.event_recorder = ISDStutorials::isds_recorder)
+```
+
+
+knit_hooks$set lets you create custom code chunk arguments
+
+## Exercises
+
+**Exercise 1:**
+
+A code chunk can be used as a calculator. Try typing 2+2 into the code chunk and running the code.
+
+```{r Ex1, exercise=TRUE}
+
+```
+
+```{r Ex1-solution, exercise.reveal_solution = FALSE}
+2 + 2
+```
+
+```{r Ex1-code-check}
+grade_this_code()
+```
+
+
+```{r}
+tagList(
+    actionButton( "button", label = "label")
+  )
+```
+
+```{r, context = "server"}
+observeEvent(input$button, {
+  #learnr::disable_all_tags()
+})
+```
+

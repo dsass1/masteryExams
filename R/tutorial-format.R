@@ -73,7 +73,7 @@ tutorial <- function(
   # template
   args <- c(args, "--template", rmarkdown::pandoc_path_arg(
     system.file("rmarkdown/templates/tutorial/resources/tutorial-format.htm",
-                package = "masteryExams")
+                package = "learnr") #masteryExams?
   ))
   
   # content includes
