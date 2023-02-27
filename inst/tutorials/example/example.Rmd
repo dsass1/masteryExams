@@ -20,6 +20,7 @@ library(ISDStutorials)
 library(masteryExams)
 library(gradethis)
 
+
 gradethis_setup()
 knitr::opts_chunk$set(echo = FALSE)
 
@@ -35,7 +36,7 @@ knit_hooks$set lets you create custom code chunk arguments
 
 A code chunk can be used as a calculator. Try typing 2+2 into the code chunk and running the code.
 
-```{r Ex1, exercise=TRUE}
+```{r Ex1, exercise = TRUE}
 
 ```
 
@@ -47,6 +48,18 @@ A code chunk can be used as a calculator. Try typing 2+2 into the code chunk and
 grade_this_code()
 ```
 
+```{r Q}
+
+quiz(
+  question("Ex4Q2) What's the city miles per gallon for the first observation in the mpg dataframe?",
+           answer("29"),
+           answer("18", correct = TRUE),
+           answer("21"),
+           allow_retry = TRUE,
+           random_answer_order = TRUE) 
+)
+```
+
 
 ```{r}
 tagList(
@@ -56,7 +69,11 @@ tagList(
 
 ```{r, context = "server"}
 observeEvent(input$button, {
-  #learnr::disable_all_tags()
+  learnr::disable_all_tags(
+    htmltools::tagList(
+      htmltools::a()
+    )
+  )
 })
 ```
 
